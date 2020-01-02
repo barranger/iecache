@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IE Caching Issue</title>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
+    <script src="https://github.com/github/fetch/releases/download/v3.0.0/fetch.umd.js"></script>
+</head>
+<body onload="refreshTime()">
+    <header>
+        <h1>IE Caching issue</h1>
+    </header>
+    <section>
+        <h4>The Current Time is: <span id="time"></span></h4>
+        <button type="button" onclick="refreshTime()">Refesh</button>
+    </section>
+    <script>
+        function refreshTime() {
+            document.getElementById("time").innerText = "Today";
+            window.fetch('http://localhost:7071/api/GetWhatTime')
+                  .then(function(response) { return response.json() })
+                  .then(function(json) { 
+                    document.getElementById("time").innerText = json.time
+                  })
+        }
+    </script>
+</body>
+</html>
