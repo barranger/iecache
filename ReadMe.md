@@ -12,7 +12,7 @@ If you look at the source code at the link you'll see I've created both a simple
 
 If you click the refresh button over and over again you'll see that it updates as you'd expect in both Chrome and Firefox.  If you try it in IE however it will always stay the same, and a quick peak at the developer tools will show you why:
 
-![Cached Response](./images/CachedResponse.png)
+![Cached Response](./images/CachedResponse.PNG)
 
 That's right even though no caching headers have been found, IE has decided that it's going to cache the value and just reuse it every time.  
 
@@ -24,6 +24,6 @@ req.HttpContext.Response.Headers.Add("Cache-Control", "no-cache");
 
 in your `HttpTrigger`-ed function and you've removed one of the many issues that IE will cause you:
 
-![Not Cached Response](./images/NotCachedResponse.png)
+![Not Cached Response](./images/NotCachedResponse.PNG)
 
 This may not be the cleanest way of dealing with the issue, but when it comes to IE, when is it ever clean.  If you know of a better way, let me know in the comments bellow.
