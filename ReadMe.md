@@ -2,7 +2,7 @@
 
 Hi my name is Barranger, and I hate Internet Explorer.
 
-Now that we have that out of the way, let me describe to you the 2345678th reason for this hatred, by explaining what IE is doing with requests to your fancy new `HttpTrigger`-ed Azure Function (a waaaaaay less fancy function we'll use for this post can be found here **ADD LINK TO SOURCE**): it's caching it, even though there are not a caching header to be found.
+Now that we have that out of the way, let me describe to you the 2345678th reason for this hatred, by explaining what IE is doing with requests to your fancy new `HttpTrigger`-ed Azure Function (a waaaaaay less fancy function we'll use for this post [can be found here](https://github.com/barranger/iecache)): it's caching it, even though there are not a caching header to be found.
 
 If you look at the source code at the link you'll see I've created both a simple Azure Function as well as an extremely simple html file that will invoke the function, when they're both running it will look something like this:
 
